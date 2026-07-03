@@ -42,8 +42,7 @@ if (existing) {
   });
 }
 
-   let hashedPassword =
-"";
+   let hashedPassword ="";
 
 if (password) {
   hashedPassword =
@@ -547,14 +546,16 @@ exports.loginClinicUser = async (req, res) => {
         process.env.JWT_SECRET,
         { expiresIn: "7d" }
       );
-
-      return res.json({
-        success: true,
-        message: "Doctor login successful",
-        role: "doctor",
-        token,
-        clinicId: user.clinicId,
-      });
+      console.log("Doctor object:", user);
+console.log("Doctor ID:", user.doctorId);
+    return res.json({
+  success:true,
+  message:"Doctor login successful",
+  role:"doctor",
+  token,
+  clinicId:user.clinicId,
+  doctorId:user.doctorId
+});
     }
 
     // Manager

@@ -323,6 +323,11 @@ View
 </button>
 </Link>
 
+  <Link to="/dashboard/receptionist/bookappointment">
+    <button className="w-full bg-[#1A5F48] hover:bg-[#14503D] text-white py-2 rounded-lg">
+      Book Appointment
+    </button>
+  </Link>
 </div>
 
 </div>

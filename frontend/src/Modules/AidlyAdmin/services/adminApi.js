@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const adminApi = axios.create({
-  baseURL: "http://localhost:3000/api/aidly-admin",
+  baseURL: "https://aidly-final-merge.onrender.com/api/aidly-admin",
 });
 
 adminApi.interceptors.request.use(

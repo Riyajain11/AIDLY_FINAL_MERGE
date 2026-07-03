@@ -51,6 +51,8 @@ import AttendenceSuccessPage from "./Modules/common/AttendenceSuccessPage";
 
 import PatientRecord from "./Modules/common/PatientRecord";
 import PatientSuccessPage from "./Modules/common/PatientSuccessPage";
+import AmbulanceDas from "./Modules/Ambulance/AmbulanceDas";
+import BookAppointment from "./Modules/clinic/reception/BookAppointment";
 
 const ErrorPage = () => <h1 className="text-center mt-20 text-3xl">Page Not Found</h1>;
 
@@ -293,7 +295,10 @@ const router = createBrowserRouter([
   path: "/dashboard/admin/viewattendance",
   element: <AttendenceRecord />,
 },
-
+{
+  path: "/dashboard/receptionist/bookappointment",
+  element: <BookAppointment />,
+},
 {
   path: "/dashboard/admin/addpatient",
   element: <AddPatientRecord />,
@@ -302,17 +307,18 @@ const router = createBrowserRouter([
 {
   path: "/dashboard/admin/viewpatient",
   element: <PatientRecord />,
-},
-      //  {
-      //   path:"/HospitalAmbulance-Dashboard",
-      //   element: <HospitalAmbulanceDas/>,
-      //   errorElement: <ErrorPage/>
-      // },
-      //  {
-      //   path:"/PrivateAmbulance-Dashboard",
-      //   element: <PrivateAmbulanceDas/>,
-      //   errorElement: <ErrorPage/>
-      // },
+  }, 
+
+       {
+        path:"/HospitalAmbulance-Dashboard",
+        element: <AmbulanceDas/>,
+        errorElement: <ErrorPage/>
+      },
+       {
+        path:"/PrivateAmbulance-Dashboard",
+        element: <AmbulanceDas/>,
+        errorElement: <ErrorPage/>
+      },
 
        {
   path:"/viewpatients",
@@ -339,6 +345,7 @@ const router = createBrowserRouter([
         element: <Myapointment/>,
         errorElement: <ErrorPage/>
   },
+  
        
        {
   path: "/admin/*",

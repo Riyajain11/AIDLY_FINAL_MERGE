@@ -20,9 +20,9 @@ export default function AttendenceReacordPage() {
       const [year, month] = monthValue.split("-");
 
       const res = await axios.get(
-        `http://localhost:3000/api/attendance/${clinicId}?month=${Number(
-          month
-        )}&year=${year}`
+        `http://https://aidly-final-merge.onrender.com/api/attendance/${clinicId}?month=${Number(
+          month,
+        )}&year=${year}`,
       );
 
       setAttendanceData(res.data.data);
@@ -47,7 +47,6 @@ export default function AttendenceReacordPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1A5F48] via-[#89C9CA] to-[#C6EBE8]">
       <div className="bg-gray-300 rounded-b-3xl py-22 relative mb-6">
-
         <div className="flex justify-center gap-4 absolute bottom-6 left-0 right-0">
           <label>Select month:</label>
 
@@ -75,9 +74,7 @@ export default function AttendenceReacordPage() {
               ←
             </button>
 
-            <h1 className="text-3xl font-bold">
-              Attendance Record
-            </h1>
+            <h1 className="text-3xl font-bold">Attendance Record</h1>
           </div>
         </div>
       </div>
@@ -94,7 +91,7 @@ export default function AttendenceReacordPage() {
             <thead className="bg-gray-200">
               <tr>
                 <th className="border p-2">Staff ID</th>
-                    <th className="border p-2">Staff Type</th>
+                <th className="border p-2">Staff Type</th>
                 <th className="border p-2">Status</th>
                 <th className="border p-2">Time</th>
                 <th className="border p-2">Date</th>

@@ -4,7 +4,7 @@ import axios from "axios";
 
 const AddPatientRecord = () => {
   const navigate = useNavigate();
- const role = localStorage.getItem("role");
+  const role = localStorage.getItem("role");
   const [error, setError] = useState("");
 
   const [formData, setFormData] = useState({
@@ -30,8 +30,11 @@ const AddPatientRecord = () => {
     setError("");
 
     try {
-      await axios.post("http://localhost:3000/api/patient", formData);
-      navigate("/patientsuccess")
+      await axios.post(
+        "https://aidly-final-merge.onrender.com/api/patient",
+        formData,
+      );
+      navigate("/patientsuccess");
     } catch (err) {
       console.error(err.response?.data);
       setError("Failed to save patient record");
@@ -47,7 +50,6 @@ const AddPatientRecord = () => {
       }}
     >
       <div className="w-full max-w-6xl">
-
         <div className="bg-[#eeeeee] rounded-2xl py-6 flex items-center justify-center relative shadow-sm">
           <button
             onClick={() => navigate(-1)}
@@ -71,9 +73,7 @@ const AddPatientRecord = () => {
           }}
         >
           <form onSubmit={handleSubmit} className="space-y-8">
-
             <div className="grid grid-cols-2 gap-12">
-
               <div>
                 <label>Patient ID :</label>
                 <input
@@ -139,7 +139,6 @@ const AddPatientRecord = () => {
                   className="w-full mt-2 px-6 py-3 rounded-full bg-[#d9d9d9]"
                 />
               </div>
-
             </div>
 
             <div>
@@ -172,10 +171,8 @@ const AddPatientRecord = () => {
                 Submit Record
               </button>
             </div>
-
           </form>
         </div>
-
       </div>
     </div>
   );

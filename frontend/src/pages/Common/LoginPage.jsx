@@ -50,7 +50,7 @@ const LoginPage = () => {
       }
 
       const data = res.data;
-
+      console.log(data);
     localStorage.setItem("token", data.token);
 
 const decoded = jwtDecode(data.token);
@@ -59,6 +59,10 @@ localStorage.setItem("role", decoded.role);
 
 if (data.clinicId) {
   localStorage.setItem("clinicId", data.clinicId);
+}
+
+if (data.doctorId) {
+  localStorage.setItem("doctorId", data.doctorId);
 }
 
 if (data.user || data.ambulance || data.admin) {

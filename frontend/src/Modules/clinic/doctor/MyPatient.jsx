@@ -26,7 +26,9 @@ export default function MyPatients() {
 
   const fetchPatients = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/patient");
+      const res = await axios.get(
+  "https://aidly-final-merge.onrender.com/api/patient"
+);
       setPatients(res.data.data || res.data);
     } catch (error) {
       console.error(error);

@@ -19,7 +19,7 @@ export default function AttendancePage() {
   const fetchStaff = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/attendance/staff/${clinicId}`
+        `http://https://aidly-final-merge.onrender.com/api/attendance/staff/${clinicId}`,
       );
 
       setStaffData(res.data.data);
@@ -52,13 +52,16 @@ export default function AttendancePage() {
     }));
 
     try {
-      await axios.post("http://localhost:3000/api/attendance/bulk", {
-        clinicId,
-        date,
-        records,
-      });
+      await axios.post(
+        "https://aidly-final-merge.onrender.com/api/attendance/bulk",
+        {
+          clinicId,
+          date,
+          records,
+        },
+      );
 
-     navigate("/staffsuccessful");
+      navigate("/staffsuccessful");
     } catch (error) {
       console.error(error.response?.data || error);
       alert(error.response?.data?.message || "Failed to save attendance");
@@ -76,7 +79,6 @@ export default function AttendancePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1A5F48] via-[#89C9CA] to-[#C6EBE8]">
       <div className="bg-gray-300 rounded-b-4xl py-22 relative mb-1">
-
         <div className="flex justify-center gap-4 absolute bottom-6 left-0 right-0">
           <label>Select date:</label>
 
@@ -104,9 +106,7 @@ export default function AttendancePage() {
               ←
             </button>
 
-            <h1 className="text-3xl font-bold">
-              Update Staff Attendance
-            </h1>
+            <h1 className="text-3xl font-bold">Update Staff Attendance</h1>
           </div>
         </div>
       </div>
@@ -135,9 +135,7 @@ export default function AttendancePage() {
                   <input
                     type="radio"
                     name={`status-${staff.staffId}`}
-                    onChange={() =>
-                      handleChange(staff.staffId, "present")
-                    }
+                    onChange={() => handleChange(staff.staffId, "present")}
                   />
                 </td>
 
@@ -145,9 +143,7 @@ export default function AttendancePage() {
                   <input
                     type="radio"
                     name={`status-${staff.staffId}`}
-                    onChange={() =>
-                      handleChange(staff.staffId, "absent")
-                    }
+                    onChange={() => handleChange(staff.staffId, "absent")}
                   />
                 </td>
 
@@ -155,9 +151,7 @@ export default function AttendancePage() {
                   <input
                     type="radio"
                     name={`status-${staff.staffId}`}
-                    onChange={() =>
-                      handleChange(staff.staffId, "leave")
-                    }
+                    onChange={() => handleChange(staff.staffId, "leave")}
                   />
                 </td>
               </tr>

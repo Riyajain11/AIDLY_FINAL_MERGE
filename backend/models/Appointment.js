@@ -19,22 +19,34 @@ const appointmentSchema = new mongoose.Schema({
     required: true
   },
 
+  // NEW
   appointmentDate: {
     type: Date,
-    default: Date.now
+    required: true
   },
 
-  tokenNumber: Number,
+  // NEW
+  appointmentTime: {
+    type: String,
+    required: true
+  },
+
+  // NEW
+  reason: {
+    type: String,
+    required: true
+  },
+
+  tokenNumber: {
+    type: Number
+  },
 
   status: {
     type: String,
-    enum: ["waiting", "completed"],
+    enum: ["waiting", "completed", "cancelled"],
     default: "waiting"
   }
 
 }, { timestamps: true });
 
-
-
-module.exports = mongoose.model("Appointment", appointmentSchema); 
-
+module.exports = mongoose.model("Appointment", appointmentSchema);

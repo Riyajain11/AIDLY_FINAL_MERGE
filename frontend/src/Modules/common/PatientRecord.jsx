@@ -13,17 +13,20 @@ const ViewPatients = () => {
 
   const fetchPatients = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/patient");
+      const res = await axios.get(
+        "https://aidly-final-merge.onrender.com/api/patient",
+      );
       setPatients(res.data);
     } catch (error) {
       console.error(error);
     }
   };
 
-  const filteredPatients = patients.filter((patient) =>
-  (patient.firstName?.toLowerCase() || "").includes(search.toLowerCase()) ||
-  (patient.patientId?.toLowerCase() || "").includes(search.toLowerCase())
-);
+  const filteredPatients = patients.filter(
+    (patient) =>
+      (patient.firstName?.toLowerCase() || "").includes(search.toLowerCase()) ||
+      (patient.patientId?.toLowerCase() || "").includes(search.toLowerCase()),
+  );
 
   return (
     <div
@@ -34,7 +37,6 @@ const ViewPatients = () => {
       }}
     >
       <div className="w-full max-w-6xl">
-
         {/* Header */}
         <div className="bg-[#eeeeee] rounded-2xl py-5 flex items-center justify-center relative shadow-sm">
           <button
@@ -44,9 +46,7 @@ const ViewPatients = () => {
             ←
           </button>
 
-          <h2 className="text-3xl font-semibold">
-            Patients Record
-          </h2>
+          <h2 className="text-3xl font-semibold">Patients Record</h2>
         </div>
 
         {/* Green Strip */}
@@ -54,7 +54,6 @@ const ViewPatients = () => {
 
         {/* Search Section */}
         <div className="bg-[#f5f5f5] p-6 rounded-xl mt-6 flex justify-center items-center gap-4 shadow-sm">
-
           <input
             type="text"
             placeholder="Search by Name or Id"
@@ -63,30 +62,30 @@ const ViewPatients = () => {
             className="px-6 py-2 rounded-full bg-gray-300 outline-none w-80"
           />
 
-         <button
-  type="button"
-  className="bg-blue-600 text-white px-6 py-2 rounded-full"
->
-  Search
-</button>
+          <button
+            type="button"
+            className="bg-blue-600 text-white px-6 py-2 rounded-full"
+          >
+            Search
+          </button>
 
-         <button
-  type="button"
-  className="bg-green-500 text-white px-6 py-2 rounded-full"
->
-  Edit
-</button>
-         <button
-  onClick={() => navigate("/addpatient")}  
-  className="bg-green-500 text-white px-6 py-2 rounded-full">
-  Add New
-</button>
+          <button
+            type="button"
+            className="bg-green-500 text-white px-6 py-2 rounded-full"
+          >
+            Edit
+          </button>
+          <button
+            onClick={() => navigate("/addpatient")}
+            className="bg-green-500 text-white px-6 py-2 rounded-full"
+          >
+            Add New
+          </button>
         </div>
 
         {/* Table */}
         <div className="bg-white rounded-xl mt-6 overflow-hidden shadow-md">
           <table className="w-full text-sm">
-
             <thead className="bg-blue-700 text-white">
               <tr>
                 <th className="p-3 text-left">Patient ID</th>
@@ -121,10 +120,8 @@ const ViewPatients = () => {
                 </tr>
               ))}
             </tbody>
-
           </table>
         </div>
-
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import AidlyLogo from "../../../assets/Aidly.jpg";
+import AidlyLogo from "../../../assets/Logomark_White.svg";
 import { Bell, User } from "lucide-react";
 
 const Navbar = () => {
