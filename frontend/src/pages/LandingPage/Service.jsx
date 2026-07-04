@@ -4,7 +4,7 @@ import gsap from "gsap";
 import AmbulanceImage from "../../assets/AmbulanceImage.png";
 import HomecareImage from "../../assets/HomecareImage.png";
 import DoctorImage from "../../assets/DoctorApointmentImage.png";
-import MedicalStoreImage from "../../assets/MedicalStoreimage.png";
+import MedicalStoreImage from "../../assets/MedicalStoreImage.png";
 
 const AidlyServices = () => {
      const servicesRef = useRef(null);

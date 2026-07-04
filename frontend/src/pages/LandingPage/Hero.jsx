@@ -389,7 +389,7 @@ import landinglogo from "../../assets/landingLogo2.png";
 import AidlyLogo from "../../assets/Aidly2.png";
 import AmbulanceImage from "../../assets/AmbulanceImage.png";
 import DoctorApointmentImage from "../../assets/DoctorApointmentImage.png";
-import HomeCareImage from "../../assets/HomeCareImage.png";
+import HomeCareImage from "../../assets/HomecareImage.png";
 import MedicalStore from "../../assets/MedicalStoreImage.png";
 import ReviewImage1 from "../../assets/ReviewImage.jpeg";
 import ReviewImage2 from "../../assets/ReviewImage2.jpeg";
