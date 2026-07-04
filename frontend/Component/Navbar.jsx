@@ -24,51 +24,69 @@ const Navbar = () => {
         {/* Left - Logo + Title */}
 
         <div className="flex items-center gap-1">
-          <img
-            src={AidlyLogo}
-            alt="logo"
-            className="w-[100px] h-[100px] md:w-[100px] md:h-[100px] object-contain"
-            style={{ opacity: 1 }}
-          />
+         <img
+  src={AidlyLogo}
+  alt="logo"
+  className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] object-contain"
+/>
 
-          <h1
-            className="text-2xl md:text-5xl font-semibold"
-            style={{
-              fontFamily: "Inria Serif, serif",
-            }}
-          >
-            Aidly
-          </h1>
+<h1
+  className="text-4xl md:text-5xl font-semibold"
+  style={{
+    fontFamily: "Inria Serif, serif",
+  }}
+>
+  Aidly
+</h1>
         </div>
 
         {/* Right - Menu */}
         <div className="flex items-center gap-4 md:gap-10">
           {/* Desktop Menu */}
           <ul className="hidden md:flex items-center gap-10 text-lg font-medium">
-            <li className="hover:text-gray-200 cursor-pointer transition">
-              Home
-            </li>
-            <li className="hover:text-gray-200 cursor-pointer transition">
-              About
-            </li>
-            <li className="hover:text-gray-200 cursor-pointer transition">
-              Services
-            </li>
-            <li className="hover:text-gray-200 cursor-pointer transition">
-              Contact
-            </li>
+           <li
+  onClick={() => navigate("/")}
+  className="hover:text-gray-200 cursor-pointer transition"
+>
+  Home
+</li>
 
-            {/* 🔐 Logout (only when logged in) */}
-            {token && (
-              <li>
-                <button
-                  onClick={handleLogout}
-                  className="bg-transparent hover:bg-white/20 text-white px-4 py-2 rounded-md transition"
-                >
-                  Logout
-                </button>
-              </li>
-            )}
+<li
+  onClick={() => navigate("/about")}
+  className="hover:text-gray-200 cursor-pointer transition"
+>
+  About
+</li>
+
+<li
+  onClick={() => navigate("/services")}
+  className="hover:text-gray-200 cursor-pointer transition"
+>
+  Services
+</li>
+
+<li
+  onClick={() => navigate("/contact")}
+  className="hover:text-gray-200 cursor-pointer transition"
+>
+  Contact
+</li>
+
+          {token ? (
+  <li
+    onClick={handleLogout}
+    className="hover:text-gray-200 cursor-pointer transition"
+  >
+    Logout
+  </li>
+) : (
+  <li
+    onClick={() => navigate("/login")}
+    className="hover:text-gray-200 cursor-pointer transition"
+  >
+    Login
+  </li>
+)}
           </ul>
 
           {/* Mobile Hamburger Button */}
@@ -101,16 +119,24 @@ const Navbar = () => {
             </li>
             
             {/* 🔐 Logout (only when logged in) */}
-            {token && (
-              <li className="px-4 py-3">
-                <button
-                  onClick={handleLogout}
-                  className="w-full text-left hover:bg-white/10 text-white px-4 py-2 rounded-md transition"
-                >
-                  Logout
-                </button>
-              </li>
-            )}
+            {token ? (
+  <li
+    onClick={handleLogout}
+    className="px-4 py-3 hover:bg-white/10 cursor-pointer transition"
+  >
+    Logout
+  </li>
+) : (
+  <li
+    onClick={() => {
+      setIsOpen(false);
+      navigate("/login");
+    }}
+    className="px-4 py-3 hover:bg-white/10 cursor-pointer transition"
+  >
+    Login
+  </li>
+)}
           </ul>
         </div>
       )}

@@ -399,7 +399,7 @@ import ReviewImage5 from "../../assets/ReviewImage5.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const NAV_HEIGHT = 40;
+const NAV_HEIGHT = 0;
 
 const services = [
   {
@@ -577,13 +577,12 @@ export default function LandingPage() {
   
   return (
     <div
-      className="bg-gradient-to-b from-[#1A5F48] via-[#89C9CA] to-[#C6EBE8] min-h-[400px] overflow-x-hidden"
+      className="bg-gradient-to-b from-[#1A5F48] via-[#89C9CA] to-[#C6EBE8] min-h-[400px] overflow-x-hidden "
       style={{ paddingTop: NAV_HEIGHT }}
     >
       <section
-        
         ref={heroRef}
-        className="pt-12 md:pt-22 flex flex-col items-center px-4 text-center"
+       className="pt-2 md:pt-6 flex flex-col items-center px-4 text-center"
       >
         <img
           ref={heroLogoRef}
@@ -634,12 +633,12 @@ export default function LandingPage() {
       </section>
 
     {/* SERVICES */}
-<section className="py-10 md:py-16 px-4 sm:px-6">
+<section className="pt-6 pb-12 md:pt-8 md:pb-16 px-4 sm:px-6">
   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 md:mb-10">
     Our Services
   </h2>
 
-  <div className="space-y-6 md:space-y-10 max-w-7xl mx-auto">
+  <div className="space-y-8 md:space-y-12 max-w-7xl mx-auto">
     {services.map((service, i) => (
       <div
         key={i}
@@ -648,7 +647,7 @@ export default function LandingPage() {
           rounded-3xl flex flex-col md:flex-row
           items-center justify-between gap-6 md:gap-8
           transition-all duration-300 hover:shadow-2xl hover:-translate-y-2
-          py-2 md:py-4
+         py-6 md:py-8
           px-2 sm:px-4
           ${
             service.reverse

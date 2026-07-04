@@ -25,7 +25,7 @@ const AidlyContact = () => {
       }}
     >
       {/* Heading */}
-      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-10 pt-18">
+      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-10 pt-2">
         Contact Us
       </h1>
 

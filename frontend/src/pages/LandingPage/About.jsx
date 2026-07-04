@@ -17,7 +17,7 @@ const AboutAidly = () => {
   return (
     <div ref={aboutRef} className="w-full bg-gradient-to-b from-[#1A5F48] via-[#89C9CA] to-[#C6EBE8] px-4 sm:px-6 md:px-10 py-6 md:py-10">
 
-      <h2 className="pt-15 md:pt-18 text-3xl sm:text-4xl md:text-[44px] font-bold text-white leading-tight mb-3">
+      <h2 className="pt-2 md:pt-6 text-3xl sm:text-4xl md:text-[44px] font-bold text-white leading-tight mb-3">
         About Aidly
       </h2>
 

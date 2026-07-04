@@ -20,11 +20,9 @@ const AidlyServices = () => {
 
   return (
     <div ref={servicesRef} className="w-full bg-gradient-to-b from-[#1A5F48] via-[#89C9CA] to-[#C6EBE8] px-4 sm:px-6 md:px-10 py-6 md:py-10">
-
-      <h1 className="font-bold text-3xl sm:text-4xl text-white mt-15 md:mt-15 mb-8 text-center md:text-left">
-        Our Services
-      </h1>
-
+<h1 className="font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-8 text-center md:text-left">
+  Our Services
+</h1>
       {/* Ambulance */}
       <div className="relative w-full max-w-6xl mx-auto rounded-[30px] bg-white/85 shadow-lg overflow-hidden py-10 sm:py-14 md:py-16 px-4 sm:px-8 md:px-16 mb-10 md:mb-15">
         <img

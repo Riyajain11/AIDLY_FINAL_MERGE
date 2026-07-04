@@ -53,34 +53,53 @@ import PatientRecord from "./Modules/common/PatientRecord";
 import PatientSuccessPage from "./Modules/common/PatientSuccessPage";
 import AmbulanceDas from "./Modules/Ambulance/AmbulanceDas";
 import BookAppointment from "./Modules/clinic/reception/BookAppointment";
-
+import Hero from "./pages/LandingPage/Hero";
+import AboutAidly from "./pages/LandingPage/About";
+import AidlyServices from "./pages/LandingPage/Service";
+import AidlyContact from "./pages/LandingPage/Contact";
 const ErrorPage = () => <h1 className="text-center mt-20 text-3xl">Page Not Found</h1>;
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
+  element: <App />,
+  errorElement: <ErrorPage />,
 
-    children: [
+   children: [
+   {
+      index: true,
+      element: <Hero />,
+    },
 
-      {
-        path: "/",
-        element: <LoginPage/>,
-        errorElement: <ErrorPage />,
-      },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
 
-      {
-        path: "/loginoption",
-        element: <LoginOptions/>
-      },
+  {
+    path: "/loginoption",
+    element: <LoginOptions />,
+  },
 
-       
       {
         path: "/Ambulancelogintype",
         element: <AmbulanceLoginoption />
       },
+     
+  {
+    path: "about",
+    element: <AboutAidly />,
+  },
 
+  {
+    path: "services",
+    element: <AidlyServices />,
+  },
+
+  {
+    path: "contact",
+    element: <AidlyContact />,
+  },
 
     ],
 
