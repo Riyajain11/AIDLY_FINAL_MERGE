@@ -43,7 +43,7 @@ import AdminRoutes from "./Modules/AidlyAdmin/routes/AdminRoutes";
 import MyPatients from "./Modules/clinic/doctor/MyPatient";
 import Myapointment from "./Modules/clinic/doctor/MyAppointment";
 import ReceptionDash from "./Modules/clinic/reception/ReceptionDas";
-import DashboardLayout from "./DashboardLayout";
+import DashboardLayout from "./Dashboardlayout";
 import AddPatientRecord from "./Modules/common/AddPatient";
 import StaffAttendence from "./Modules/common/StaffAttendence";
 import AttendenceRecord from "./Modules/common/AttendenceRecord";
