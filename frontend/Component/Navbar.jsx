@@ -105,16 +105,21 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden border-t border-white/20 bg-[#1A5F48]/95">
           <ul className="flex flex-col py-4">
-            <li className="px-4 py-3 hover:bg-white/10 cursor-pointer transition">
+            <li
+              onClick={() => navigate("/")}
+            className="px-4 py-3 hover:bg-white/10 cursor-pointer transition">
               Home
             </li>
-            <li className="px-4 py-3 hover:bg-white/10 cursor-pointer transition">
+            <li  onClick={() => navigate("/about")}
+            className="px-4 py-3 hover:bg-white/10 cursor-pointer transition">
               About
             </li>
-            <li className="px-4 py-3 hover:bg-white/10 cursor-pointer transition">
+            <li onClick={() => navigate("/services")}
+            className="px-4 py-3 hover:bg-white/10 cursor-pointer transition">
               Services
             </li>
-            <li className="px-4 py-3 hover:bg-white/10 cursor-pointer transition">
+            <li onClick={() => navigate("/contact")}
+            className="px-4 py-3 hover:bg-white/10 cursor-pointer transition">
               Contact
             </li>
             
